@@ -468,13 +468,13 @@ def page_prediction(pipeline):
             # Probability gauge bar
             prob_pct   = result["churn_probability"]
             bar_color  = RISK_COLORS[risk]
-            st.markdown(
+            gauge_html = (
                 "<div style='background:#eee;border-radius:10px;height:24px;width:100%;'>"
-                "<div style='background:%s;width:%s%%;border-radius:10px;height:24px;"
-                "text-align:center;color:white;font-weight:bold;line-height:24px;'>%s%%</div>"
-                "</div>" % (bar_color, prob_pct, prob_pct),
-                unsafe_allow_html=True,
-            )
+                "<div style='background:{c};width:{p}%;border-radius:10px;height:24px;"
+                "text-align:center;color:white;font-weight:bold;line-height:24px;'>{p}%</div>"
+                "</div>"
+            ).format(c=bar_color, p=prob_pct)
+            st.markdown(gauge_html, unsafe_allow_html=True)
             st.markdown("<br>", unsafe_allow_html=True)
 
             col_rf, col_rec = st.columns(2)
