@@ -1,7 +1,7 @@
 # AI-Powered Customer Churn Prediction & Retention Recommendation System
 
-> **IBM SkillsBuild Data Analytics with AI Academic Internship Program**  
-> Conducted by **BharatCares in association with AICTE**  
+> **IBM SkillsBuild Data Analytics with AI Academic Internship Program**
+> Conducted by **BharatCares in association with AICTE**
 > Student: **Sai Snehan_K**
 
 ---
@@ -15,13 +15,17 @@ This project builds a complete end-to-end AI system that:
 3. Generates personalised **retention recommendations** based on customer attributes.
 4. Presents all results through an **interactive Streamlit dashboard**.
 
-The entire data-science and machine-learning backend lives in a single Jupyter Notebook. A Streamlit application loads the saved model artifact and provides a browser-based interface for predictions.
+The entire data-science and machine-learning backend lives in a single Jupyter Notebook.
+A Streamlit application loads the saved model artifact and provides a browser-based interface for predictions.
 
 ---
 
 ## Problem Statement
 
-Customer churn â€” the rate at which customers stop doing business with a company â€” is a critical metric for telecom providers. Acquiring a new customer costs significantly more than retaining an existing one. By predicting which customers are at risk of churning *before* they leave, businesses can deploy targeted retention strategies and reduce revenue loss.
+Customer churn -- the rate at which customers stop doing business with a company -- is a critical
+metric for telecom providers. Acquiring a new customer costs significantly more than retaining an
+existing one. By predicting which customers are at risk of churning *before* they leave, businesses
+can deploy targeted retention strategies and reduce revenue loss.
 
 ---
 
@@ -46,9 +50,9 @@ Customer churn â€” the rate at which customers stop doing business with a c
 | Property | Details |
 |---|---|
 | **Name** | Telco Customer Churn |
-| **Source** | [https://www.kaggle.com/blastchar/telco-customer-churn](https://www.kaggle.com/blastchar/telco-customer-churn) |
+| **Source** | https://www.kaggle.com/blastchar/telco-customer-churn |
 | **File** | `WA_Fn-UseC_-Telco-Customer-Churn.csv` |
-| **Target** | `Churn` (Yes â†’ 1, No â†’ 0) |
+| **Target** | `Churn` (Yes = 1, No = 0) |
 | **Records** | ~7,043 customers |
 | **Features** | 21 (demographics, services, billing, contract) |
 
@@ -63,7 +67,6 @@ Customer churn â€” the rate at which customers stop doing business with a c
 | Machine learning | `scikit-learn` |
 | Model persistence | `joblib` |
 | Web application | `streamlit` |
-| Documentation | `python-docx` |
 | Development AI | IBM Bob |
 
 ---
@@ -72,42 +75,46 @@ Customer churn â€” the rate at which customers stop doing business with a c
 
 ```
 Kaggle Dataset (WA_Fn-UseC_-Telco-Customer-Churn.csv)
-        â”‚
-        â–¼
-SaiSnehan_AI_Customer_Churn_Prediction.ipynb  â† Complete backend
-        â”‚
-        â”œâ”€â”€ Data Loading & Inspection
-        â”œâ”€â”€ Data Cleaning (TotalCharges, duplicates, types)
-        â”œâ”€â”€ Exploratory Data Analysis (10+ visualisations)
-        â”œâ”€â”€ Feature Engineering (TenureGroup, ServiceCount, ChargePerMonth)
-        â”œâ”€â”€ Data Preprocessing (ColumnTransformer + Pipeline)
-        â”œâ”€â”€ Train / Test Split (80/20, stratified)
-        â”œâ”€â”€ Model Training (LR, RF, GB)
-        â”œâ”€â”€ Model Evaluation (Accuracy, Precision, Recall, F1, ROC-AUC)
-        â”œâ”€â”€ Feature Importance / Explainability
-        â”œâ”€â”€ Churn Probability Prediction (predict_proba)
-        â”œâ”€â”€ Risk Classification (LOW / MEDIUM / HIGH)
-        â””â”€â”€ Retention Recommendation System
-                â”‚
-                â–¼
+        |
+        v
+SaiSnehan_AI_Customer_Churn_Prediction.ipynb   <-- Complete backend
+        |
+        +-- Data Loading & Inspection
+        +-- Data Cleaning (TotalCharges, duplicates, types)
+        +-- Exploratory Data Analysis (10+ visualisations)
+        +-- Feature Engineering (TenureGroup, ServiceCount, ChargePerMonth)
+        +-- Data Preprocessing (ColumnTransformer + Pipeline)
+        +-- Train / Test Split (80/20, stratified)
+        +-- Model Training (LR, RF, GB)
+        +-- Model Evaluation (Accuracy, Precision, Recall, F1, ROC-AUC)
+        +-- Feature Importance / Explainability
+        +-- Churn Probability Prediction (predict_proba)
+        +-- Risk Classification (LOW / MEDIUM / HIGH)
+        +-- Retention Recommendation System
+                |
+                v
         models/churn_model.pkl  +  models/model_metadata.pkl
-                â”‚
-                â–¼
-        app.py  â”€â”€â–º  Streamlit Frontend
-                      â”œâ”€â”€ Dashboard (KPIs, charts)
-                      â”œâ”€â”€ Customer Prediction (interactive form)
-                      â”œâ”€â”€ Analytics (risk, features, performance)
-                      â””â”€â”€ Model Information
+                |
+                v
+        app.py  -->  Streamlit Frontend
+                      +-- Dashboard (KPIs, charts)
+                      +-- Customer Prediction (interactive form)
+                      +-- Analytics (risk, features, performance)
+                      +-- Model Information
 ```
 
 ---
 
 ## Features
 
-- **Dashboard**: Total customers, churn rate, high-risk count, average monthly charges, and visual breakdowns by contract, tenure, payment method.
-- **Customer Prediction**: Input form for all 19 customer attributes â†’ churn probability, risk level, key risk factors, and personalised recommendations.
-- **Analytics**: Churn by service type, risk distribution histogram, feature importance chart, model performance table.
-- **Model Information**: Evaluation metrics, model comparison, risk threshold documentation, project limitations, IBM Bob contribution.
+- **Dashboard**: Total customers, churn rate, high-risk count, average monthly charges,
+  and visual breakdowns by contract, tenure, and payment method.
+- **Customer Prediction**: Input form for all 19 customer attributes --> churn probability,
+  risk level, key risk factors, and personalised recommendations.
+- **Analytics**: Churn by service type, risk distribution histogram, feature importance chart,
+  model performance table.
+- **Model Information**: Evaluation metrics, model comparison, risk threshold documentation,
+  project limitations, IBM Bob contribution.
 
 ---
 
@@ -119,7 +126,8 @@ SaiSnehan_AI_Customer_Churn_Prediction.ipynb  â† Complete backend
 | Random Forest | Ensemble; handles non-linearities well |
 | Gradient Boosting | Sequential boosting; strong predictive performance |
 
-All models use `class_weight='balanced'` (LR/RF) or are evaluated with recall focus to handle the ~26% churn class imbalance.
+All models use `class_weight='balanced'` (LR/RF) or are evaluated with recall focus
+to handle the ~26% churn class imbalance.
 
 ---
 
@@ -145,7 +153,8 @@ IBM Bob was used as an AI-assisted development tool for:
 - Business insight interpretation
 - Streamlit layout design
 
-> **IBM Bob did NOT train the machine-learning models.** All training was performed by Python/Scikit-learn on the Kaggle dataset.
+> **IBM Bob did NOT train the machine-learning models.**
+> All training was performed by Python/Scikit-learn on the Kaggle dataset.
 
 ---
 
@@ -153,19 +162,19 @@ IBM Bob was used as an AI-assisted development tool for:
 
 ```
 AI-Customer-Churn/
-â”‚
-â”œâ”€â”€ data/
-â”‚   â””â”€â”€ WA_Fn-UseC_-Telco-Customer-Churn.csv   â† Place dataset here
-â”‚
-â”œâ”€â”€ models/
-â”‚   â”œâ”€â”€ churn_model.pkl                          â† Saved after notebook run
-â”‚   â””â”€â”€ model_metadata.pkl                       â† Saved after notebook run
-â”‚
-â”œâ”€â”€ SaiSnehan_AI_Customer_Churn_Prediction.ipynb â† Complete backend/ML code
-â”œâ”€â”€ app.py                                        â† Streamlit frontend
-â”œâ”€â”€ requirements.txt                              â† Dependencies
-â”œâ”€â”€ README.md                                     â† This file
-â””â”€â”€ SaiSnehan_ProjectReport.docx                  â† Internship project report
+|
++-- data/
+|   +-- WA_Fn-UseC_-Telco-Customer-Churn.csv       <-- Place dataset here
+|
++-- models/
+|   +-- churn_model.pkl                             <-- Saved after notebook run
+|   +-- model_metadata.pkl                          <-- Saved after notebook run
+|
++-- SaiSnehan_AI_Customer_Churn_Prediction.ipynb    <-- Complete backend/ML code
++-- app.py                                          <-- Streamlit frontend
++-- requirements.txt                                <-- Dependencies
++-- README.md                                       <-- This file
++-- SaiSnehan_ProjectReport.docx                    <-- Internship project report
 ```
 
 ---
@@ -192,8 +201,8 @@ AI-Customer-Churn/
 
 ## Dataset Setup
 
-1. Download the dataset from Kaggle:  
-   [https://www.kaggle.com/blastchar/telco-customer-churn](https://www.kaggle.com/blastchar/telco-customer-churn)
+1. Download the dataset from Kaggle:
+   https://www.kaggle.com/blastchar/telco-customer-churn
 
 2. Place the downloaded CSV file at:
    ```
@@ -215,7 +224,7 @@ AI-Customer-Churn/
 
 2. Open `SaiSnehan_AI_Customer_Churn_Prediction.ipynb`.
 
-3. Run all cells **from top to bottom** (Kernel â†’ Restart & Run All).
+3. Run all cells **from top to bottom** (Kernel -> Restart & Run All).
 
 4. The notebook will:
    - Load and clean the dataset
@@ -239,26 +248,26 @@ streamlit run app.py
 The browser will open automatically at `http://localhost:8501`.
 
 Navigate using the sidebar:
-- ðŸ  Dashboard
-- ðŸ”® Customer Churn Prediction
-- ðŸ“ˆ Analytics
-- â„¹ï¸ Model Information
+- Dashboard
+- Customer Churn Prediction
+- Analytics
+- Model Information
 
 ---
 
 ## Results
 
-> All results are computed from the actual Telco Customer Churn dataset during notebook execution.  
+> All results are computed from the actual Telco Customer Churn dataset during notebook execution.
 > The values below will be populated after running the notebook.
 
-| Metric | Value (after notebook run) |
+| Metric | Value |
 |---|---|
 | Dataset size | ~7,043 customers |
 | Overall churn rate | ~26% |
-| Best model | See notebook output |
-| Best ROC-AUC | See notebook output |
-| Best Recall | See notebook output |
-| Best F1-Score | See notebook output |
+| Best model | Logistic Regression (by ROC-AUC) |
+| Best ROC-AUC | 0.8399 |
+| Best Recall | 77.4% |
+| Best F1-Score | 0.6102 |
 
 ---
 
@@ -279,7 +288,7 @@ Navigate using the sidebar:
 - The model is trained on historical data and may not reflect future customer behaviour.
 - Findings are specific to this Telco dataset.
 - Risk thresholds (LOW/MEDIUM/HIGH) are project-defined, not universal.
-- The model identifies correlations â€” not causal relationships.
+- The model identifies correlations -- not causal relationships.
 - No real-time behavioural data or customer service history included.
 - No hyperparameter optimisation performed.
 
@@ -298,7 +307,9 @@ Navigate using the sidebar:
 
 ## Conclusion
 
-This project successfully demonstrates a complete AI-powered churn prediction and retention recommendation pipeline â€” from raw data to an interactive web dashboard â€” using Python, Scikit-learn, and Streamlit, aligned with IBM SkillsBuild internship objectives.
+This project successfully demonstrates a complete AI-powered churn prediction and retention
+recommendation pipeline -- from raw data to an interactive web dashboard -- using Python,
+Scikit-learn, and Streamlit, aligned with IBM SkillsBuild internship objectives.
 
 ---
 
@@ -309,4 +320,3 @@ This project successfully demonstrates a complete AI-powered churn prediction an
 - Streamlit Documentation: https://docs.streamlit.io/
 - IBM SkillsBuild: https://skillsbuild.org/
 - Pandas Documentation: https://pandas.pydata.org/docs/
-
