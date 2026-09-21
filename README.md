@@ -2,7 +2,7 @@
 
 > **IBM SkillsBuild Data Analytics with AI Academic Internship Program**
 > Conducted by **BharatCares in association with AICTE**
-> Student: **Sai Snehan_K**
+> Student: **SaiSnehanK**
 
 ---
 

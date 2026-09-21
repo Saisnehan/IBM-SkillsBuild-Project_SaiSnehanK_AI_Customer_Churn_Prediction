@@ -11,7 +11,7 @@ No model training occurs inside this file.
 
 IBM SkillsBuild Data Analytics with AI Academic Internship Program
 BharatCares in association with AICTE
-Student: Sai Snehan_K
+Student: SaiSnehanK
 """
 
 import os
@@ -228,7 +228,7 @@ def sidebar():
         "**IBM SkillsBuild Internship**\n\n"
         "Data Analytics with AI\n\n"
         "BharatCares x AICTE\n\n"
-        "Student: Sai Snehan_K"
+        "Student: SaiSnehanK"
     )
     return page
 
@@ -776,7 +776,7 @@ def main():
     st.markdown(
         "<p style='text-align:center; color:gray;'>"
         "IBM SkillsBuild Data Analytics with AI Academic Internship | "
-        "BharatCares x AICTE | Student: Sai Snehan_K"
+        "BharatCares x AICTE | Student: SaiSnehanK"
         "</p>",
         unsafe_allow_html=True,
     )
